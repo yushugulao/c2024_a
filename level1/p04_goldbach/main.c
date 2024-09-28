@@ -1,41 +1,43 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+// 判断一个数是否是素数
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i=2; i*i<= num; i++) {
+        if (num%i==0) return false;
+    }
+    return true;
+}
 
 int main() {
-    int flagofgdbh=1;
-    int prime[3];
-    short int p=0;
-    for(int i=3;i<=100;i++) {
-        int canbe=0;
-        int j=1;
-        int begin=1;
-        while(canbe==0) {
-            j=begin;
-            int assess=2;
-            short int flag=1;
-            while(j<i) {
-                while(assess*assess<=j&&flag==1) {
-                    int a;
-                    a=j%assess;
-                    if(a==0) {
-                        flag=0;
-                    }
-                    assess=assess+1;
-                }
-                if(flag==1) {
-                    prime[p]=j;p++;
-                }
-                if(p==2) {
-                    if(prime[0]+prime[1]+prime[2]==i) {
-                        canbe=1;
-                        break;
-                    }
-                    else{
-                        p-=1;
-                    }
-                }
-                j++;
+    int num;
+    bool found;
+    bool yes[48];
+    for (int i=0; i<48; i++) {yes[i]=false;}
+    for (num = 4; num <= 100; num += 2) {
+        found = false;
+        for (int i = 2; i <= num / 2; i++) {
+            if (isPrime(i) && isPrime(num - i)) {
+                printf("%d = %d + %d\n", num, i, num - i);
+                found = true;
+                yes[(num-4)/2]=true;
+                break;
             }
         }
+        if (found==false) {
+            printf("not found of%d \n", num);
+        }
     }
+    int scan=0;bool gdbh_is_ok=true;
+    while (scan<48) {
+        if(yes[scan]==false) {
+            gdbh_is_ok=false;
+            break;
+        }
+        scan++;
+    }
+    if (gdbh_is_ok==true) {printf("gdbh is right\n");}
+    else {printf("gdbh is not right\n");}
     return 0;
 }
