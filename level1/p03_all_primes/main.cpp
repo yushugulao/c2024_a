@@ -3,21 +3,27 @@
 #include <chrono>
 using namespace std;
 
-bool IsPrime(int num) {
-    if (num <= 1) return false;
-    if (num == 2) return true;
-    if (num % 2 == 0) return false;
-    for (int i = 3; i * i <= num; i += 2) { // 只检查奇数
-        if (num % i == 0) return false;
+void IsPrime(bool primes[], int max) {
+    int primeslist[max];
+    int count = 0;
+    for (int i=2; i <= max; i++) {
+        if (!primes[i]) {
+            primeslist[count++] = i;
+        }
+        for (int j=0; j<count && i*primeslist[j]<=max;j++) {
+            primes[i * primeslist[j]] = true;
+            if (!i%primeslist[j]) break;
+        }
     }
-    return true;
 }
 
 int main() {
     auto start = chrono::high_resolution_clock::now();
+    bool primes[1024]={false};
+    IsPrime(primes,1000);
     int base=2;
     while(base<1000) {
-        if (IsPrime(base)) {
+        if (!primes[base]) {
             cout << base << endl;
         }
         base++;

@@ -1,26 +1,32 @@
-#include<iostream>
-#include<windows.h>
+#include <iostream>
+#include <vector>
+#include <numeric>
 using namespace std;
-int main() {
-    int m = 5;
-    int count = 0;
-    int rev = 1;
-    while (count<=m)
-    {
-        cout << 'b' << endl;
-        Sleep(500);
-        system("cls");
-        int step = 0;
-        while (step <= count)
-        {
-            cout << ' ';
-            step++;
+vector<int> Char_to_Two(char str) {
+    int ascii=static_cast<int>(str);
+    vector<int> sequence;
+    while(ascii>0) {
+        sequence.push_back(0);
+        for (int i = sequence.size()-1; i>=1 ; i--) {
+            sequence[i] = sequence[i-1];
         }
-        count += rev;
-        if (count == m or rev==-1 and count==-1)
-        {
-            rev *= -1;
-            //cout << count << endl;
-        }
+        sequence[0]=ascii%2;
+        ascii=ascii/2;
     }
+    while (sequence.size()<8){
+        sequence.push_back(0);
+        for (int i = sequence.size()-1; i>=1 ; i--) {
+            sequence[i] = sequence[i-1];
+        }
+        sequence[0]=0;
+    }
+    return sequence;
+}
+int main() {
+    vector<int> two_char;
+    two_char = Char_to_Two('7');
+    for (int i = 0; i < two_char.size(); i++) {
+        cout << two_char[i] << endl;
+    }
+    return 0;
 }
