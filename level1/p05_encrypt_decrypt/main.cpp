@@ -1,11 +1,15 @@
 ///backpack 背包加密
 ///输入限制：必须是几个不带空格的数字，字母或可用ascll码表示的特殊字符
-///明文为长度为四的倍数的一串数字
+///密文为长度为四的倍数的一串数字
+///实际用户手中的私钥包括w和privatekey
 #include <iostream>
 #include <vector>
 #include <numeric>
 #include <string>
 #include <stdlib.h>
+#include <ctime>
+#include <time.h>
+#include <windows.h>
 using namespace std;
 
 // 用于生成质数
@@ -120,7 +124,8 @@ vector<int> decrypt(int cipher, const vector<int>& privateKey, int m, int w) {
 int main() {
     // 超递增序列大小
     int n=8;
-
+    //添加当前时间为随机数种子,不然rand直接随机不了
+    srand((unsigned)time(NULL));
     // 生成私钥（超递增序列）
     vector<int> privateKey = generateSuperIncreasingSequence(n);
 
@@ -133,7 +138,7 @@ int main() {
     IsPrime(primes,1000);
     while (!wwhetherisprime) {
         mPrime=rand()%1000;
-        if(primes[mPrime]){
+        if(!primes[mPrime]){
             wwhetherisprime=true;
             w=mPrime;
         }
@@ -157,15 +162,32 @@ int main() {
         vector<int> message = Char_to_Two(inputs[i]);
         int cipher = encrypt(publicKey, message);
         string strcipher=to_string(cipher);
-        if (strcipher.length()%4) {
+        while (strcipher.length()<4) {
             strcipher='0'+strcipher;
         }
         Encrypts+=strcipher;
     }
+
+    string strprivateKey;
+    string strpublicKey;
+    for (int i = 0; i < privateKey.size(); i++) {
+        strprivateKey+=to_string(privateKey[i]);
+        if (i!=privateKey.size()-1) strprivateKey+=",";
+    }
+    for (int i = 0; i < publicKey.size(); i++) {
+        strpublicKey+=to_string(publicKey[i]);
+        if (i!=publicKey.size()-1) strpublicKey+=",";
+    }
+    cout <<"the publickey is: "<<strpublicKey<<endl;
+    printf("yor w is %d\n",w);
+    cout<<"your privatekey is:"<<strprivateKey<<endl;
     cout << "The encryptedMessage is:" << Encrypts << endl;
 
     // 解密
-    int EncryptsLen=Messagelen*4;//模拟读取了明文的长度，明文的长度一定是密文的四倍
+    // 此处正常应当让用户输入私钥与密文，为方便交互起见省去
+    cout << "decrypting,please wait"<<endl;
+    Sleep(1000);//模拟解密时间
+    int EncryptsLen=Messagelen*4;//模拟读取了密文的长度，根据加密规则，密文的长度一定是明文的四倍
     string output="";
     for (int i = 0; i < EncryptsLen; i+=4) {
         char strcipher[]="";
@@ -176,9 +198,11 @@ int main() {
         vector<int> decryptedMessage = decrypt(cipher, privateKey, m, w);
         output+=Two_to_Char(decryptedMessage);
     }
+
     printf("The decryptedMessage is:\n");
     for (int i = 0; i < EncryptsLen/4; i++) {
         printf("%c",output[i]);
     }
+
     return 0;
 }
