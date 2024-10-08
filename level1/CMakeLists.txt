@@ -2,6 +2,8 @@ project(level1)
 
 add_executable(p01_running_letter p01_running_letter/main.c
         p01_running_letter/letter.cpp
+        queue.cpp
+        24_9_30_queue/queue.cpp
 )
 
 add_executable(p02_is_prime p02_is_prime/main.c)

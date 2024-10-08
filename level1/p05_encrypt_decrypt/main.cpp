@@ -1,11 +1,27 @@
-///backpack
-
+///backpack 背包加密
+///输入限制：必须是几个不带空格的数字，字母或可用ascll码表示的特殊字符
+///明文为长度为四的倍数的一串数字
 #include <iostream>
 #include <vector>
 #include <numeric>
 #include <string>
 #include <stdlib.h>
 using namespace std;
+
+// 用于生成质数
+void IsPrime(bool primes[], int max) {
+    int primeslist[max];
+    int count = 0;
+    for (int i=2; i <= max; i++) {
+        if (!primes[i]) {
+            primeslist[count++] = i;
+        }
+        for (int j=0; j<count && i*primeslist[j]<=max;j++) {
+            primes[i * primeslist[j]] = true;
+            if (!i%primeslist[j]) break;
+        }
+    }
+}
 
 // 求逆元
 int modInverse(int a, int m) {
@@ -28,6 +44,7 @@ vector<int> generateSuperIncreasingSequence(int n) {
     return sequence;
 }
 
+// 把二进制下的ascll码转为要输出的字符
 char Two_to_Char(const vector<int>&decryptedMessage) {
     int sum=0;
     for (int i = 0; i < decryptedMessage.size(); i++) {
@@ -37,6 +54,7 @@ char Two_to_Char(const vector<int>&decryptedMessage) {
     return str;
 }
 
+//把输入的字符转为可操作的比特串
 vector<int> Char_to_Two(char str) {
     int ascii=static_cast<int>(str);
     vector<int> sequence;
@@ -93,11 +111,11 @@ vector<int> decrypt(int cipher, const vector<int>& privateKey, int m, int w) {
 }
 
 //输出字符串的长度
-int Length(char in) {
+/*int Length(char in) {
     string str = to_string(in);
     int len = str.length();
     return len;
-}
+}*/
 
 int main() {
     // 超递增序列大小
@@ -108,12 +126,24 @@ int main() {
 
     // 模数和乘数
     int m=accumulate(privateKey.begin(), privateKey.end(), 0) + 10;  // 模数m要大于私钥的和
-    int w=7;  // 随机选择一个与m互质的数
+    int w;  // 随机选择一个与m互质的数
+    bool wwhetherisprime=false;
+    int mPrime;
+    bool primes[1024]={false};
+    IsPrime(primes,1000);
+    while (!wwhetherisprime) {
+        mPrime=rand()%1000;
+        if(primes[mPrime]){
+            wwhetherisprime=true;
+            w=mPrime;
+        }
+    }
+
 
     // 生成公钥
     vector<int> publicKey = generatePublicKey(privateKey, m, w);
 
-    // 输入要加密的消息然后转成比特串
+    // 输入要加密的消息然后转成比特串组
     string input;
     printf("Please enter the message to encrypt:\n");
     cin>>input;
@@ -126,13 +156,16 @@ int main() {
     for (int i = 0; i < Messagelen; i++) {
         vector<int> message = Char_to_Two(inputs[i]);
         int cipher = encrypt(publicKey, message);
-        Encrypts+=to_string(cipher);
+        string strcipher=to_string(cipher);
+        if (strcipher.length()%4) {
+            strcipher='0'+strcipher;
+        }
+        Encrypts+=strcipher;
     }
-
     cout << "The encryptedMessage is:" << Encrypts << endl;
 
     // 解密
-    int EncryptsLen=Encrypts.length();
+    int EncryptsLen=Messagelen*4;//模拟读取了明文的长度，明文的长度一定是密文的四倍
     string output="";
     for (int i = 0; i < EncryptsLen; i+=4) {
         char strcipher[]="";
@@ -143,10 +176,9 @@ int main() {
         vector<int> decryptedMessage = decrypt(cipher, privateKey, m, w);
         output+=Two_to_Char(decryptedMessage);
     }
-    cout << "The decryptedMessage is: ";
-    for (int i = 0; i < EncryptsLen; i++) {
-        cout << output[i];
+    printf("The decryptedMessage is:\n");
+    for (int i = 0; i < EncryptsLen/4; i++) {
+        printf("%c",output[i]);
     }
-
     return 0;
 }
