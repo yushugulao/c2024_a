@@ -1,6 +1,8 @@
-#include <printf.h>
+#include <stdio.h>
 
 int main() {
-    printf("hello world!\n");
+    if (-1) {
+        printf("-233\n");
+    }
     return 0;
 }
