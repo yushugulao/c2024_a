@@ -1,4 +1,5 @@
 ///created by whf
+///
 #include <stdio.h>
 int main() {
     long num;
