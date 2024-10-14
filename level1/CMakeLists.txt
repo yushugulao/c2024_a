@@ -2,8 +2,6 @@ project(level1)
 
 add_executable(p01_running_letter p01_running_letter/main.c
         p01_running_letter/letter.cpp
-        queue.cpp
-        24_9_30_queue/queue.cpp
 )
 
 add_executable(p02_is_prime p02_is_prime/main.c)
@@ -24,3 +22,11 @@ add_executable(p08_push_boxes p08_push_boxes/main.c)
 add_executable(p09_linked_list p09_linked_list/main.c)
 
 add_executable(p10_warehouse p10_warehouse/main.c)
+
+add_executable(new_target stack/stack.cpp
+        stack/stack.cpp)
+
+add_executable(new_target1
+        ReversePolishNotation/ReversePolishNotation.cpp)
+
+add_executable(new_target2 RPN_with_only_one/RPN_with_only_one.cpp)

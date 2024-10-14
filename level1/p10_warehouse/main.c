@@ -1,3 +1,5 @@
+///created by whf
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>

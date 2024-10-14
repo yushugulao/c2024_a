@@ -1,6 +1,7 @@
-#include <printf.h>
+#include <>
 
+
+static int alien;
 int main() {
-    printf("hello world!\n");
-    return 0;
+
 }

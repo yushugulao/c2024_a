@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(level1)
-add_executable(queue level1/24_9_30_queue/queue.cpp)
+add_subdirectory(level2)
