@@ -15,7 +15,10 @@ add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.cpp
 
 add_executable(p06_hanoi p06_hanoi/main.cpp)
 
-add_executable(p07_maze p07_maze/main.cpp)
+add_executable(p07_maze
+        p07_maze/main.cpp
+        p07_maze/checkMaze.cpp
+        p07_maze/main.hpp)
 
 add_executable(p08_push_boxes p08_push_boxes/main.c)
 
