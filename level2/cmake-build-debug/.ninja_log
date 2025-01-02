@@ -1,0 +1,7 @@
+# ninja log v6
+896	1042	7574448426351079	GA.exe	321c6d1d86ff291a
+18	3045	7536444554554198	CMakeFiles/PI.dir/PI/main.cpp.obj	de35ca7e08b26b14
+7	895	7574448417456562	CMakeFiles/GA.dir/GA/main.c.obj	25ebb0d1d4cdcaca
+191	358	7575178017837414	SkipList.exe	faeeac3e566dac37
+3046	3377	7536444584836106	PI.exe	d5419ce35ee4e603
+3	190	7575178015956990	CMakeFiles/SkipList.dir/SkipList/SkipList.c.obj	5f360a2bfcdacb09
