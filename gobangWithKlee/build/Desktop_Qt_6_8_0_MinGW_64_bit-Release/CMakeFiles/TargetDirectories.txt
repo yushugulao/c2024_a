@@ -1,0 +1,9 @@
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/gobangForAssignment.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/edit_cache.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/rebuild_cache.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/list_install_components.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/install.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/install/local.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/install/strip.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/gobangForAssignment_autogen_timestamp_deps.dir
+C:/Users/HONOR/Documents/gobangForAssignment/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/CMakeFiles/gobangForAssignment_autogen.dir

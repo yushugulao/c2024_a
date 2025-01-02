@@ -1,0 +1,11 @@
+# ninja log v6
+7	1038	7568379049910690	gobangForAssignment_autogen/timestamp	ff06432cc1903d0c
+7	1038	7568379049910690	gobangForAssignment_autogen/mocs_compilation.cpp	ff06432cc1903d0c
+7	1038	7568379049910690	C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/gobangForAssignment_autogen/timestamp	ff06432cc1903d0c
+7	1038	7568379049910690	C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/gobangForAssignment_autogen/mocs_compilation.cpp	ff06432cc1903d0c
+1068	3303	7568379051411031	CMakeFiles/gobangForAssignment.dir/main.cpp.obj	5e253b424c0b0bb5
+1136	3613	7568379052083011	CMakeFiles/gobangForAssignment.dir/aiworker.cpp.obj	9f052c241c1f3316
+1045	3722	7568379051180976	CMakeFiles/gobangForAssignment.dir/gobangForAssignment_autogen/mocs_compilation.cpp.obj	ca459fb91ad5182a
+1091	3726	7568379051641063	CMakeFiles/gobangForAssignment.dir/mainwindow.cpp.obj	5059948497b39a85
+1113	4022	7568379051861141	CMakeFiles/gobangForAssignment.dir/boardwidget.cpp.obj	54b02e8681814b8b
+4023	4444	7568379080960895	gobangForAssignment.exe	1a679c2c1087a877

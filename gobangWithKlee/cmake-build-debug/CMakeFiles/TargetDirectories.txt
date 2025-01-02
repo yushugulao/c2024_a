@@ -1,0 +1,9 @@
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/gobangForAssignment.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/install.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/install/strip.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/gobangForAssignment_autogen_timestamp_deps.dir
+C:/Users/HONOR/Documents/gobangForAssignment/cmake-build-debug/CMakeFiles/gobangForAssignment_autogen.dir
