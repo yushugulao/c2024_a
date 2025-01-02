@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="move_sound.wav">move_sound.wav</file>
+        <file alias="klee.png">klee.png</file>
+        <file>klee2.jpg</file>
+        <file>kleeSounds/a.wav</file>
+        <file>kleeSounds/f.wav</file>
+        <file>kleeSounds/h.wav</file>
+        <file>kleeSounds/g.wav</file>
+        <file>backMu.wav</file>
+        <file>kleeSounds/c.wav</file>
+        <file>kleeSounds/d.wav</file>
+        <file>kleeSounds/e.wav</file>
+    </qresource>
+</RCC>
