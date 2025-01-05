@@ -1,0 +1,3 @@
+由于github不支持大文件和exe上传，故有两处采用了压缩包上传
+一处是外面的exe，一处是gobangForAssignment_autogen/EWIEGA46WW/qrc_resources.zip
+解压缩到压缩包所在的文件夹下即可
